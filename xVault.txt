@@ -1,0 +1,22 @@
+XVault 
+==================
+
+This program secures files by encrypting them and the providing a means for the user to access them. 
+
+When a file is put in the vault the original file is overwritten with random data before it is deleted. 
+
+The vault can extract the file, call a program to use the file and then update the vault with the updated file. 
+
+The vault is written so that it can be compiled for windows, pocket pc, and linux.
+
+The code can be downloaded from http://www.microobjects.com/xvault
+
+Development plans
+===================
+
+Command version first:
+At first, the database will written to the harddrive unencrypted without using a vault key
+The point is to get it working (adding files, etc...) first
+Then the database will only appear on the harddrive encrypted and unencrypted in memory only
+
+Followed by some GUI wrappers

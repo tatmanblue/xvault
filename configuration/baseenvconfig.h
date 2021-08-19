@@ -1,0 +1,57 @@
+/*
+ ******************************************************************************
+ This file is part of xvault.
+
+    xvault is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    xvault is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with xVault; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+
+    architected and written by 
+    matt raffel of microobjects inc 2003
+    mattr@microobjects.com
+
+        copyright (c) 2003 by matt raffel unless noted otherwise
+
+
+ ******************************************************************************
+*/
+#ifndef _BASE_ENVIRONMENT_CONFIG
+#define _BASE_ENVIRONMENT_CONFIG
+
+
+class CBaseEnvConfig
+{
+   protected:
+
+      char  szWorkingDir[MAX_FILE_LEN - 1],
+            szTempDir[MAX_FILE_LEN - 1];
+
+      bool  fInitialized;
+
+      // some oses may wish to override this
+      virtual void SetDefaults(void);
+
+   public:
+      CBaseEnvConfig(void);
+      virtual ~CBaseEnvConfig(void) {};
+
+
+      virtual void Initialize(void) = 0;
+
+      virtual const bool INITIALIZED(void) const;
+      virtual const char *WORKINGDIR(void) const;
+      virtual const char *TEMPDIR(void) const;
+};
+
+#endif
